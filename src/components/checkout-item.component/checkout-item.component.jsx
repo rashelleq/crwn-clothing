@@ -1,5 +1,9 @@
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/cart.context';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ClearIcon from '@mui/icons-material/Clear';
+
 import './checkout-item.styles.scss';
 
 const CheckoutItem = ({ cartItem }) => {
@@ -20,16 +24,16 @@ const CheckoutItem = ({ cartItem }) => {
       <span className='name'>{name}</span>
       <span className='quantity'>
         <div className='arrow' onClick={removeItemHandler}>
-          &#10094;
+          <ArrowBackIosNewIcon />
         </div>
         <span className='value'>{quantity}</span>
         <div className='arrow' onClick={addItemHandler}>
-          &#10095;
+          <ArrowForwardIosIcon />
         </div>
       </span>
       <span className='price'>{price}</span>
       <div className='remove-button' onClick={clearItemHandler}>
-        &#10005;
+        <ClearIcon />
       </div>
     </div>
   );
