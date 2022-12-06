@@ -16,6 +16,8 @@ const Category = () => {
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
 
+  //if you have components that rely on async code, will need a safety net in case not available
+  //only render component if data is present
   return (
     <div className='category-container'>
       {products &&
