@@ -27,7 +27,7 @@ const userReducer = (state, action) => {
         currentUser: payload,
       };
     default:
-      throw new Error(`Unhandled styped ${type} in the userReducer`);
+      throw new Error(`Unhandled type ${type} in the userReducer`);
   }
 };
 
