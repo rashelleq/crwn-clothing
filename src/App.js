@@ -26,6 +26,7 @@ const App = () => {
     });
     return unsubscribe;
   }, [dispatch]);
+
   //don't have to pass dispatch in array, but this gets error to go away because
   //hook doesn't know that dispatch never changes
 
