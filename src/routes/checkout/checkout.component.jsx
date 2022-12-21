@@ -3,7 +3,10 @@ import {
   selectCartItems,
   selectCartTotal,
 } from '../../store/cart/cart.selector';
+
 import CheckoutItem from '../../components/checkout-item.component/checkout-item.component';
+import PaymentForm from '../../components/payment-form/payment-form.component';
+
 import {
   CheckoutContainer,
   CheckoutHeader,
@@ -40,6 +43,7 @@ const Checkout = () => {
       })}
 
       <Total>Total: ${totalPrice}</Total>
+      <PaymentForm />
     </CheckoutContainer>
   );
 };
