@@ -7,6 +7,8 @@ import {
   createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils';
 
+import { updateProfile } from 'firebase/auth';
+
 import { SignUpContainer } from './sign-up-form.styles.jsx';
 
 const defaultFormFields = {
@@ -38,8 +40,13 @@ const SignUpForm = () => {
         password
       );
 
-      await createUserDocumentFromAuth(user, { displayName });
-      console.log(user);
+      await updateProfile(user, { displayName: displayName }).catch((error) =>
+        console.log(error)
+      );
+
+      await createUserDocumentFromAuth(user, { displayName }).catch((error) =>
+        console.log(error)
+      );
 
       resetFormFields();
     } catch (error) {

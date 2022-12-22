@@ -8,6 +8,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  updateProfile,
 } from 'firebase/auth';
 import {
   getFirestore,
@@ -95,6 +96,15 @@ export const createUserDocumentFromAuth = async (
       console.log('error creating user', error.message);
     }
   }
+
+  await updateProfile(auth.currentUser, {
+    displayName: userAuth.displayName,
+  })
+    .then(() => {
+      console.log(auth.currentUser.displayName);
+    })
+    .catch((error) => console.log('error created', error));
+
   return userDocRef;
 };
 
