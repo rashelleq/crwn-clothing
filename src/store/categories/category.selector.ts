@@ -1,7 +1,9 @@
 //selectors is where you want to transform the data
 import { createSelector } from 'reselect';
+import { CategoriesState } from './category.reducer';
+import { CategoryMap } from './category.types';
 
-const selectorCategoryReducer = (state) => {
+const selectorCategoryReducer = (state): CategoriesState => {
   return state.categories;
 };
 
@@ -19,7 +21,7 @@ export const selectCategoriesMap = createSelector(
       const { title, items } = category;
       acc[title.toLowerCase()] = items;
       return acc;
-    }, {});
+    }, {} as CategoryMap);
   }
 );
 
