@@ -2,8 +2,9 @@
 import { createSelector } from 'reselect';
 import { CategoriesState } from './category.reducer';
 import { CategoryMap } from './category.types';
+import { RootState } from '../store';
 
-const selectorCategoryReducer = (state): CategoriesState => {
+const selectorCategoryReducer = (state: RootState): CategoriesState => {
   return state.categories;
 };
 
