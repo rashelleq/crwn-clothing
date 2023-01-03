@@ -5,7 +5,7 @@ import {
   removeItemFromCart,
 } from '../../store/cart/cart.action';
 
-import { selectCartItems } from '../../store/cart/cart.selector.js';
+import { selectCartItems } from '../../store/cart/cart.selector';
 
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
